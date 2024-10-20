@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Memoirs</title>
-    <description>I will take you on the fabulous world of exploration. Travel, culture, lifestyle. Eat, Pray, Love!</description>
+    <title>Bhuwan Adhikari</title>
+    <description>My blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 Oct 2024 21:47:19 +0545</pubDate>
-    <lastBuildDate>Sun, 20 Oct 2024 21:47:19 +0545</lastBuildDate>
+    <pubDate>Sun, 20 Oct 2024 22:09:10 +0545</pubDate>
+    <lastBuildDate>Sun, 20 Oct 2024 22:09:10 +0545</lastBuildDate>
     <generator>Jekyll v4.3.4</generator>
     
       <item>

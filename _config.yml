@@ -34,7 +34,7 @@ social:
 hero:
   hero__title: Bhuwan Adhikari
   hero__description: I am here and lets see what i will be doing
-  hero__image: "/images/app/main-image.webp"
+  hero__image: "/images/app/hero-image.jpg"
 
 #-------------------------------
 # Newsletter

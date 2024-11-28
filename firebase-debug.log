@@ -1,0 +1,31 @@
+[debug] [2024-11-28T08:42:10.020Z] ----------------------------------------------------------------------
+[debug] [2024-11-28T08:42:10.022Z] Command:       /Users/bhuwan/.nvm/versions/node/v20.16.0/bin/node /Users/bhuwan/.nvm/versions/node/v20.16.0/bin/firebase deploy
+[debug] [2024-11-28T08:42:10.022Z] CLI Version:   13.27.0
+[debug] [2024-11-28T08:42:10.022Z] Platform:      darwin
+[debug] [2024-11-28T08:42:10.022Z] Node Version:  v20.16.0
+[debug] [2024-11-28T08:42:10.022Z] Time:          Thu Nov 28 2024 14:27:10 GMT+0545 (Nepal Time)
+[debug] [2024-11-28T08:42:10.022Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-28T08:42:10.067Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-28T08:42:10.067Z] > authorizing via signed-in user (thecrowapp@gmail.com)
+[debug] [2024-11-28T08:42:10.067Z] [iam] checking project forum-3faf8 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-11-28T08:42:10.068Z] Checked if tokens are valid: true, expires at: 1732785457086
+[debug] [2024-11-28T08:42:10.068Z] Checked if tokens are valid: true, expires at: 1732785457086
+[debug] [2024-11-28T08:42:10.068Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/forum-3faf8:testIamPermissions [none]
+[debug] [2024-11-28T08:42:10.068Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/forum-3faf8:testIamPermissions x-goog-quota-user=projects/forum-3faf8
+[debug] [2024-11-28T08:42:10.069Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/forum-3faf8:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-11-28T08:42:11.781Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/forum-3faf8:testIamPermissions 200
+[debug] [2024-11-28T08:42:11.781Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/forum-3faf8:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-11-28T08:42:11.782Z] Checked if tokens are valid: true, expires at: 1732785457086
+[debug] [2024-11-28T08:42:11.782Z] Checked if tokens are valid: true, expires at: 1732785457086
+[debug] [2024-11-28T08:42:11.783Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/forum-3faf8 [none]
+[debug] [2024-11-28T08:42:12.388Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/forum-3faf8 200
+[debug] [2024-11-28T08:42:12.388Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/forum-3faf8 {"projectId":"forum-3faf8","projectNumber":"721898944943","displayName":"forum","name":"projects/forum-3faf8","resources":{"hostingSite":"forum-3faf8","realtimeDatabaseInstance":"forum-3faf8"},"state":"ACTIVE","etag":"1_4f5d0685-026e-4b60-a3e5-2d3cf46a122d"}
+[info] 
+[info] === Deploying to 'forum-3faf8'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-11-28T08:42:12.394Z] Checked if tokens are valid: true, expires at: 1732785457086
+[debug] [2024-11-28T08:42:12.394Z] Checked if tokens are valid: true, expires at: 1732785457086
+[debug] [2024-11-28T08:42:12.394Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/forum-3faf8/versions [none]
+[debug] [2024-11-28T08:42:12.395Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/forum-3faf8/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}

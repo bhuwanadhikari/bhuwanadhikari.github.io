@@ -83,7 +83,7 @@ disqus-identifier: something-no-ready-vaaxaina # Add your shortname for Disqus C
 
 #-------------------------------
 # Google Analytics
-google-analytics: GTM-K6GMWVDV # Add your GA Tracking Id
+google-analytics: G-7XCCKXE5XP # Add your GA Tracking Id
 
 #-------------------------------
 # Build Settings

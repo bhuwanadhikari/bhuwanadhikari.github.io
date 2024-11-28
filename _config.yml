@@ -1,8 +1,8 @@
 # ---
 #-------------------------------
 # Site Settings
-title: Bhuwan Adhikari
-logo: "/images/logo/ftg-logo.png"
+title: Bhuwan
+# logo: "/images/logo/ftg-logo.png"
 description: Bhuwan Adhikari Portfolio and Blogs
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bhuwanadhikari.com.np" # the base hostname & protocol for your site, e.g. http://example.com
@@ -12,7 +12,7 @@ color_scheme: auto # You can choose three modes auto, light, and dark. By defaul
 # Author Settings
 author:
   author__name: Bhuwan Adhikari
-  author__bio: Software Engineer and roaming around
+  author__bio: Software Developer and Roaming Around
   author__avatar: "/images/logo/ftg-logo-trans.png"
 
 social:
@@ -22,7 +22,7 @@ social:
   # - {icon: "ion-logo-facebook", link: "https://www.facebook.com/pocket.heythere.dei"}
   - {
       icon: "ion-logo-instagram",
-      link: "https://www.instagram.com/find_trek_guide/",
+      link: "https://www.instagram.com/adh_bhuwan/",
     }
 #- {icon: "ion-logo-meetup", link: "https://www.meetup.com/pocket-heythere/"}
 
@@ -33,15 +33,15 @@ social:
 # Hero Settings
 hero:
   hero__title: Bhuwan Adhikari
-  hero__description: I am here and lets see what i will be doing
+  hero__description: Just spitting stuff here about my worldy and non worldly experiences
   hero__image: "/images/app/hero-image.jpg"
 
 #-------------------------------
 # Newsletter
-mailchimp: enable # To enable the mailchimp form, use the value 'enable'. To disable the form, leave the field blank.
-mailchimp__identifier: contact.findtrekguide.com/ # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
-mailchimp__input__text: Subscribe here
-mailchimp__button__text: Subscribe to our newsletter
+# mailchimp: enable # To enable the mailchimp form, use the value 'enable'. To disable the form, leave the field blank.
+# mailchimp__identifier: contact.bhuwan.com/ # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
+# mailchimp__input__text: Subscribe here
+# mailchimp__button__text: Subscribe to our newsletter
 
 #-------------------------------
 # Gallery Footer Section
@@ -83,7 +83,7 @@ disqus-identifier: something-no-ready-vaaxaina # Add your shortname for Disqus C
 
 #-------------------------------
 # Google Analytics
-google-analytics: G-JBGKLDV5XL # Add your GA Tracking Id
+google-analytics: GTM-K6GMWVDV # Add your GA Tracking Id
 
 #-------------------------------
 # Build Settings

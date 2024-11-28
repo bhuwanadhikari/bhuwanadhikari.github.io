@@ -5,6 +5,7 @@ description: If you are planning to do high altitude trek, learn what Altitude S
 date: 2024-11-26
 image: "https://images.pexels.com/photos/29466873/pexels-photo-29466873/free-photo-of-breathtaking-nepalese-mountain-landscape.jpeg"
 tags: [nepal, trekking, himalayas, trek guide, altitude sickness, travel]
+published: false
 ---
 
 ### **Understanding Altitude Sickness: Causes, Symptoms, and Remedies**

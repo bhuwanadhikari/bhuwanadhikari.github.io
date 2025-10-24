@@ -12,3 +12,4 @@ _posts/.DS_Store
 .bundle/
 vendor/
 .firebase
+firebase-debug.log

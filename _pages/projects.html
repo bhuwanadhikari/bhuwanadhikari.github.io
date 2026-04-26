@@ -5,11 +5,11 @@ permalink: /projects/
 ---
 
 <div class="container">
-  <div class="row animate">
+  <div class="row projects-grid animate">
     {% if site.projects.size > 0 %}
       {% assign sorted_projects = site.projects | sort: "date" | reverse %}
       {% for post in sorted_projects %}
-        {% include article.html %}
+        {% include project-card.html %}
       {% endfor %}
     {% else %}
       <p>No projects yet.</p>

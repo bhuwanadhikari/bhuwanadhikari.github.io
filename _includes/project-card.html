@@ -1,0 +1,24 @@
+<div class="project-card col col-4 col-d-6 col-t-6 col-m-12">
+  <a class="project-card__link" href="{{ post.url | prepend: site.baseurl }}">
+    {% if post.image %}
+    <div class="project-card__image">
+      <img class="lazy" data-src="{{ site.baseurl }}{{ post.image }}" alt="{{ post.title }}">
+    </div>
+    {% else %}
+    <div class="project-card__image project-card__image--placeholder"></div>
+    {% endif %}
+    <div class="project-card__body">
+      <h2 class="project-card__title">{{ post.title }}</h2>
+      {% if post.description %}
+      <p class="project-card__excerpt">{{ post.description }}</p>
+      {% endif %}
+      {% if post.tags.size > 0 %}
+      <div class="project-card__tags">
+        {% for tag in post.tags limit:4 %}
+        <span class="project-card__tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </a>
+</div>

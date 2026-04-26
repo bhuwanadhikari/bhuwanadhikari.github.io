@@ -1,25 +1,30 @@
 ---
 layout: post
 title: "I started my MSc. in Natural Language Processing"
-description: I am upgrading myself to new realm, to the field of AI after being involved in software engineering for more than 5 years
+description: After five years in software engineering, I'm shifting gears into AI and NLP with a master's degree in Germany.
 date: 2025-10-01
 image: "/images/blogs/nepal-trek.jpg"
-tags: [masters degree, natural language processing, uni trier, university of trier, ]
+tags: [masters degree, natural language processing, uni trier, university of trier]
 published: true
 ---
 
 
-
 ## Background
-After I graduated in 2021, I immediately started working as software developer at a company in Kathmandu. After working there for few months, I developed a feeling that onsite job is eating up my free time just because I had to spend 2 hours daily just for commuting. So, I kept applying for remote jobs parallely. And, fortunately, I got a new job in next few months. That was a remote job and I could work from anywhere. That time it was a perfort job for me.
 
-But couple of years down the line, my mind again started looking for something new. I had been writing programs, developing features, reviewing code everyday. For the first two years it was fun but after that I again had an urge to explore something new in my job. That job could have allowed me to shift to a different tech stack but I don't know why it didn't happen. And at the same time, I had been interested to do masters degree in a one specialized field. My skills seemed to have been stuck with same things for a long time, I just wanted to give another boost in the bucket of my skills.
+After graduating in 2021, I immediately started working as a software developer at a company in Kathmandu. A few months in, I realized that the onsite setup was quietly eating my life. Two hours of commuting every day, nothing to show for it except exhaustion. So I kept applying for remote jobs on the side, and fortunately it didn't take long. The next job was fully remote — work from anywhere, no commute, no fixed desk. At that point in my life, it felt perfect.
 
+But a couple of years down the line, the restlessness came back. I had been writing code, building features, and reviewing PRs every single day. The first two years were genuinely fun. By the third year, I was doing the same things with my eyes half closed. The job could have let me explore a different tech stack, but for whatever reason that never materialized. Meanwhile, a quieter thought had been growing in the background: I wanted to go deeper into one specific field, not just keep accumulating years of general experience.
 
-## Planning for my masters degree
-So, after working there for 3 years, I decided to resign. Trump had just been announcing with Tarrifs and the world economy was starting to slow down. I still think it wasn't a bad decision. After I left my job, I started preparing and applying for the universities. Back of my head, I had always thought of doing my masters degree in Germany for a long time, so my obvious choice was Germany. I applied for several universities and got offer letters from few ones. 
-
-Finally, my plan was working out, I prepared for the visa procedure. At the time when I was waiting for my visa, GenZ protest happened. That delayed my process for few days but eventually it worked out. So, late September, I came to Germany and to Trier. 
+I had been drawn to NLP and machine learning for a while. It felt like the area where things were actually moving fast, where the problems were hard in interesting ways, and where my software background would be useful rather than irrelevant. A master's degree felt like the right way to actually commit to it instead of just reading papers on weekends.
 
 
-To be continued---
+## Planning the move
+
+After three years at that job, I resigned. The timing wasn't ideal in the macro sense — Trump's tariff announcements were rattling the global economy and things felt uncertain. But I had made up my mind and I still think it was the right call. Waiting for a good time to do something like this is how it never happens.
+
+After leaving, I focused fully on applications. Germany had been at the back of my mind for years as a destination — good universities, free or low-cost tuition, strong research culture, and a serious approach to engineering. I applied to several programs and got offer letters from a few. The University of Trier's NLP program was the one that made the most sense, and I accepted.
+
+Then came the visa process. Just as I was in the middle of waiting, the GenZ protests in Nepal broke out, which disrupted some administrative processes for a stretch. It added a few weeks of uncertainty, but it eventually resolved. In late September, I finally arrived in Germany, in Trier.
+
+
+To be continued —

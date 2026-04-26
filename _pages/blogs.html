@@ -1,0 +1,17 @@
+---
+layout: default
+title: Blogs
+permalink: /blogs/
+---
+
+<div class="container">
+  <div class="row animate">
+    {% if site.posts.size > 0 %}
+      {% for post in site.posts %}
+        {% include article.html %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% include section-tags.html %}

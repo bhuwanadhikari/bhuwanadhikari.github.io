@@ -5,17 +5,23 @@ image: '/images/blogs/nepal-trek.jpg'
 
 <section class="portfolio-hero">
   <div class="portfolio-hero__image-wrap">
-    <img class="lazy portfolio-hero__image" data-src="{{ site.baseurl }}/images/blogs/nepal-trek.jpg" alt="Mountain landscape in Nepal">
+    <video class="portfolio-hero__video" autoplay muted loop playsinline webkit-playsinline preload="metadata"
+      poster="{{ site.baseurl }}/images/blogs/nepal-trek.jpg" aria-label="Hero background video">
+      <source src="{{ site.baseurl }}/images/about/moto_vid.MP4" type="video/mp4">
+    </video>
+    <img class="portfolio-hero__image" src="{{ site.baseurl }}/images/blogs/nepal-trek.jpg" alt="Mountain landscape in Nepal">
     <div class="portfolio-hero__overlay"></div>
   </div>
   <div class="container">
     <div class="row">
       <div class="col col-12">
         <div class="portfolio-hero__content animate">
-          <p class="portfolio-hero__kicker">About / Portfolio</p>
           <h1 class="portfolio-hero__title">Bhuwan Adhikari</h1>
-          <p class="portfolio-hero__subtitle">MSc NLP Student and Software Developer building web, mobile, and AI-powered products.</p>
-          <p class="portfolio-hero__description">4+ years of product engineering experience across React, React Native, Node.js, and TypeScript. Currently in Trier, Germany, specializing in Natural Language Processing and practical AI systems.</p>
+          <p class="portfolio-hero__subtitle">MSc NLP Student and Software Developer building web, mobile, and
+            AI-powered products.</p>
+          <p class="portfolio-hero__description">4+ years of product engineering experience across React, React Native,
+            Node.js, and TypeScript. Currently in Trier, Germany, specializing in Natural Language Processing and
+            practical AI systems.</p>
 
           <div class="portfolio-hero__chips">
             <span>Trier, Germany</span>
@@ -24,9 +30,12 @@ image: '/images/blogs/nepal-trek.jpg'
           </div>
 
           <div class="portfolio-hero__actions">
-            <a href="https://github.com/bhuwanadhikari" target="_blank" rel="noopener noreferrer" class="button button--secondary">GitHub</a>
-            <a href="https://www.linkedin.com/in/bhuwanadhikari/" target="_blank" rel="noopener noreferrer" class="button button--secondary">LinkedIn</a>
-            <a href="{{ site.baseurl }}/contact/" class="button">Contact</a>
+            <a href="https://github.com/bhuwanadhikari" target="_blank" rel="noopener noreferrer"
+              class="button button--secondary"><i class="ion ion-logo-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/bhuwanadhikari/" target="_blank" rel="noopener noreferrer"
+              class="button button--secondary"><i class="ion ion-logo-linkedin"></i> LinkedIn</a>
+            <a href="https://www.instagram.com/adh_bhuwan/" target="_blank" rel="noopener noreferrer"
+              class="button button--secondary"><i class="ion ion-logo-instagram"></i> Instagram</a>
           </div>
         </div>
       </div>
@@ -42,7 +51,7 @@ image: '/images/blogs/nepal-trek.jpg'
           <h2 class="section__title">Skills</h2>
         </div>
       </div>
-      <div class="col col-6 col-d-12">
+      <div class="col col-3 col-d-6 col-t-12">
         <div class="skill-group">
           <h3 class="skill-group__title"><i class="ion ion-logo-javascript"></i> Frontend</h3>
           <div class="skill-group__chips">
@@ -60,7 +69,7 @@ image: '/images/blogs/nepal-trek.jpg'
           </div>
         </div>
       </div>
-      <div class="col col-6 col-d-12">
+      <div class="col col-3 col-d-6 col-t-12">
         <div class="skill-group">
           <h3 class="skill-group__title"><i class="ion ion-md-cube"></i> Backend and Data</h3>
           <div class="skill-group__chips">
@@ -75,7 +84,7 @@ image: '/images/blogs/nepal-trek.jpg'
           </div>
         </div>
       </div>
-      <div class="col col-6 col-d-12">
+      <div class="col col-3 col-d-6 col-t-12">
         <div class="skill-group">
           <h3 class="skill-group__title"><i class="ion ion-md-bulb"></i> AI and NLP</h3>
           <div class="skill-group__chips">
@@ -90,7 +99,7 @@ image: '/images/blogs/nepal-trek.jpg'
           </div>
         </div>
       </div>
-      <div class="col col-6 col-d-12">
+      <div class="col col-3 col-d-6 col-t-12">
         <div class="skill-group">
           <h3 class="skill-group__title"><i class="ion ion-md-construct"></i> Workflow and Tools</h3>
           <div class="skill-group__chips">
@@ -113,22 +122,41 @@ image: '/images/blogs/nepal-trek.jpg'
     <div class="row">
       <div class="col col-12">
         <div class="section__head">
-          <h2 class="section__title">Timeline CV</h2>
+          <h2 class="section__title">My Timeline</h2>
         </div>
       </div>
       <div class="col col-12">
         <div class="portfolio-timeline">
+          <article class="timeline-item timeline-item--education">
+            <div class="timeline-item__icon"><i class="ion ion-md-school"></i></div>
+            <div class="timeline-item__content">
+              <p class="timeline-item__date">Oct 2025 - Present</p>
+              <h3 class="timeline-item__title">MSc in Natural Language Processing</h3>
+              <p class="timeline-item__org"><img class="lazy" data-src="https://logo.clearbit.com/uni-trier.de"
+                  alt="Universitat Trier logo"> <a href="https://www.uni-trier.de/en/" target="_blank"
+                  rel="noopener noreferrer">Universität Trier</a> <span>Trier, Germany</span></p>
+              <ul>
+                <li>Focused on transformers, code generation, LLMs, and practical NLP workflows.</li>
+                <li>Building projects with Python, Hugging Face, spaCy, and PyTorch.</li>
+              </ul>
+            </div>
+          </article>
           <article class="timeline-item">
             <div class="timeline-item__icon"><i class="ion ion-md-briefcase"></i></div>
             <div class="timeline-item__content">
               <p class="timeline-item__date">Mar 2022 - Feb 2025</p>
               <h3 class="timeline-item__title">Software Developer</h3>
-              <p class="timeline-item__org"><img class="lazy" data-src="https://logo.clearbit.com/lastingdynamics.com" alt="Lasting Dynamics logo"> <a href="https://www.lastingdynamics.com/" target="_blank" rel="noopener noreferrer">Lasting Dynamics</a> <span>Las Palmas, Spain (Remote)</span></p>
+              <p class="timeline-item__org"><img class="lazy" data-src="https://logo.clearbit.com/lastingdynamics.com"
+                  alt="Lasting Dynamics logo"> <a href="https://www.lastingdynamics.com/" target="_blank"
+                  rel="noopener noreferrer">Lasting Dynamics</a> <span>Las Palmas, Spain (Remote)</span></p>
               <ul>
-                <li>Built enterprise web and cross-platform mobile applications with React.js, React Native, Next.js, Redux, and TypeScript.</li>
-                <li>Implemented CI/CD pipelines with Fastlane and GitHub Actions to reduce manual release time by 2-3 hours per delivery.</li>
+                <li>Built enterprise web and cross-platform mobile applications with React.js, React Native, Next.js,
+                  Redux, and TypeScript.</li>
+                <li>Implemented CI/CD pipelines with Fastlane and GitHub Actions to reduce manual release time by 2-3
+                  hours per delivery.</li>
                 <li>Optimized app bundle and performance, improving startup speed and reducing memory usage.</li>
-                <li>Mentored junior developers through code reviews and pair programming, improving delivery quality.</li>
+                <li>Mentored junior developers through code reviews and pair programming, improving delivery quality.
+                </li>
               </ul>
             </div>
           </article>
@@ -138,9 +166,13 @@ image: '/images/blogs/nepal-trek.jpg'
             <div class="timeline-item__content">
               <p class="timeline-item__date">May 2021 - Feb 2022</p>
               <h3 class="timeline-item__title">Software Developer</h3>
-              <p class="timeline-item__org"><img class="lazy" data-src="https://logo.clearbit.com/khalti.com" alt="Khalti logo"> <a href="https://khalti.com/" target="_blank" rel="noopener noreferrer">Khalti</a> <span>Lalitpur, Nepal</span></p>
+              <p class="timeline-item__org"><img class="lazy" data-src="https://logo.clearbit.com/khalti.com"
+                  alt="Khalti logo"> <a href="https://khalti.com/" target="_blank" rel="noopener noreferrer">Khalti</a>
+                <span>Lalitpur, Nepal</span>
+              </p>
               <ul>
-                <li>Designed and maintained backend APIs and frontend modules for a payment gateway serving 1M+ users.</li>
+                <li>Designed and maintained backend APIs and frontend modules for a payment gateway serving 1M+ users.
+                </li>
                 <li>Improved API response time through Redis caching and Node.js optimization.</li>
                 <li>Improved frontend performance and reduced redundant API calls using smarter caching strategies.</li>
               </ul>
@@ -152,46 +184,29 @@ image: '/images/blogs/nepal-trek.jpg'
             <div class="timeline-item__content">
               <p class="timeline-item__date">May 2020 - Jan 2021</p>
               <h3 class="timeline-item__title">React Developer</h3>
-              <p class="timeline-item__org"><img class="lazy" data-src="https://logo.clearbit.com/mandalatech.com" alt="Mandala Tech logo"> <a href="https://www.mandalatech.com/" target="_blank" rel="noopener noreferrer">Mandala Tech</a> <span>Pokhara, Nepal</span></p>
+              <p class="timeline-item__org"><img class="lazy" data-src="https://logo.clearbit.com/mandalatech.com"
+                  alt="Mandala Tech logo"> <a href="https://www.mandalatech.com/" target="_blank"
+                  rel="noopener noreferrer">Mandala Tech</a> <span>Pokhara, Nepal</span></p>
               <ul>
                 <li>Developed SDKs, add-ons, data visualization features, and PWA-ready web products.</li>
-                <li>Worked with cross-functional teams in agile delivery using React.js, Next.js, Node.js, and TypeScript.</li>
+                <li>Worked with cross-functional teams in agile delivery using React.js, Next.js, Node.js, and
+                  TypeScript.</li>
               </ul>
             </div>
           </article>
 
-          <article class="timeline-item">
-            <div class="timeline-item__icon"><i class="ion ion-md-briefcase"></i></div>
-            <div class="timeline-item__content">
-              <p class="timeline-item__date">Apr 2020 - Feb 2022</p>
-              <h3 class="timeline-item__title">Freelance Full Stack Developer</h3>
-              <p class="timeline-item__org"><span class="timeline-item__org-no-logo">Independent</span> <span>Nepal</span></p>
-              <ul>
-                <li>Built responsive web applications and mobile features for clients with React.js, Node.js, Next.js, and PostgreSQL.</li>
-                <li>Delivered solutions for feature phones running KaiOS and rapid MVP engagements.</li>
-              </ul>
-            </div>
-          </article>
 
-          <article class="timeline-item timeline-item--education">
-            <div class="timeline-item__icon"><i class="ion ion-md-school"></i></div>
-            <div class="timeline-item__content">
-              <p class="timeline-item__date">Oct 2025 - Present</p>
-              <h3 class="timeline-item__title">MSc in Natural Language Processing</h3>
-              <p class="timeline-item__org"><img class="lazy" data-src="https://logo.clearbit.com/uni-trier.de" alt="Universitat Trier logo"> <a href="https://www.uni-trier.de/en/" target="_blank" rel="noopener noreferrer">Universitat Trier</a> <span>Trier, Germany</span></p>
-              <ul>
-                <li>Focused on transformers, code generation, LLMs, and practical NLP workflows.</li>
-                <li>Building projects with Python, Hugging Face, spaCy, and PyTorch.</li>
-              </ul>
-            </div>
-          </article>
+
+
 
           <article class="timeline-item timeline-item--education">
             <div class="timeline-item__icon"><i class="ion ion-md-school"></i></div>
             <div class="timeline-item__content">
               <p class="timeline-item__date">Jan 2016 - May 2021</p>
               <h3 class="timeline-item__title">Bachelor in Computer Engineering</h3>
-              <p class="timeline-item__org"><img class="lazy" data-src="https://logo.clearbit.com/tu.edu.np" alt="Tribhuvan University logo"> <a href="https://tu.edu.np/" target="_blank" rel="noopener noreferrer">Tribhuvan University</a> <span>Kathmandu, Nepal</span></p>
+              <p class="timeline-item__org"><img class="lazy" data-src="https://logo.clearbit.com/tu.edu.np"
+                  alt="Tribhuvan University logo"> <a href="https://tu.edu.np/" target="_blank"
+                  rel="noopener noreferrer">Tribhuvan University</a> <span>Kathmandu, Nepal</span></p>
               <ul>
                 <li>Worked on projects in robotics, AI, and embedded systems.</li>
                 <li>Built a private blockchain-based medicine supply-chain project for final year research.</li>
@@ -199,55 +214,7 @@ image: '/images/blogs/nepal-trek.jpg'
             </div>
           </article>
 
-          <article class="timeline-item timeline-item--education">
-            <div class="timeline-item__icon"><i class="ion ion-md-school"></i></div>
-            <div class="timeline-item__content">
-              <p class="timeline-item__date">2014 - 2016</p>
-              <h3 class="timeline-item__title">High School, Physics and Mathematics</h3>
-              <p class="timeline-item__org"><span class="timeline-item__org-no-logo">Kathmandu Model Secondary School</span> <span>Kathmandu, Nepal</span></p>
-            </div>
-          </article>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="portfolio-section animate">
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <div class="section__head">
-          <h2 class="section__title">Social</h2>
-        </div>
-      </div>
-
-      <div class="col col-4 col-d-6 col-t-12">
-        <a class="social-card social-card--linkedin" href="https://www.linkedin.com/in/bhuwanadhikari/" target="_blank" rel="noopener noreferrer">
-          <div class="social-card__icon"><i class="ion ion-logo-linkedin"></i></div>
-          <h3>LinkedIn</h3>
-          <p>Professional profile and latest updates.</p>
-          <span>linkedin.com/in/bhuwanadhikari</span>
-        </a>
-      </div>
-
-      <div class="col col-4 col-d-6 col-t-12">
-        <a class="social-card social-card--github" href="https://github.com/bhuwanadhikari" target="_blank" rel="noopener noreferrer">
-          <div class="social-card__icon"><i class="ion ion-logo-github"></i></div>
-          <h3>GitHub</h3>
-          <p>Open-source work, projects, and experiments.</p>
-          <span>github.com/bhuwanadhikari</span>
-        </a>
-      </div>
-
-      <div class="col col-4 col-d-12 col-t-12">
-        <a class="social-card social-card--instagram" href="https://www.instagram.com/adh_bhuwan/" target="_blank" rel="noopener noreferrer">
-          <div class="social-card__icon"><i class="ion ion-logo-instagram"></i></div>
-          <h3>Instagram</h3>
-          <p>@adh_bhuwan</p>
-          <span>Travel and life moments</span>
-          <img class="lazy social-card__preview" data-src="{{ site.baseurl }}/images/insta_screenshot.png" alt="Instagram screenshot">
-        </a>
       </div>
     </div>
   </div>
@@ -259,7 +226,7 @@ image: '/images/blogs/nepal-trek.jpg'
       <div class="col col-12">
         <div class="section__head">
           <h2 class="section__title">Featured Projects</h2>
-          <a class="section__link" href="{{site.baseurl}}/projects/">See all projects</a>
+          <a class="section__link" href="{{site.baseurl}}/projects/">See all Projects</a>
         </div>
       </div>
     </div>
@@ -267,7 +234,7 @@ image: '/images/blogs/nepal-trek.jpg'
     <div class="row projects-grid">
       {% assign sorted_projects = site.projects | sort: "date" | reverse %}
       {% for post in sorted_projects limit:3 %}
-        {% include project-card.html %}
+      {% include project-card.html %}
       {% endfor %}
     </div>
   </div>
@@ -279,7 +246,7 @@ image: '/images/blogs/nepal-trek.jpg'
       <div class="col col-12">
         <div class="section__head">
           <h2 class="section__title">Latest Blogs</h2>
-          <a class="section__link" href="{{site.baseurl}}/blogs/">See all blogs</a>
+          <a class="section__link" href="{{site.baseurl}}/blogs/">See all Blogs</a>
         </div>
       </div>
     </div>
@@ -294,7 +261,8 @@ image: '/images/blogs/nepal-trek.jpg'
             {% endif %}
           </a>
           <div class="blog-card__content">
-            <time class="blog-card__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+            <time class="blog-card__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string
+              }}</time>
             <h3 class="blog-card__title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
             {% if post.description %}
             <p class="blog-card__excerpt">{{ post.description }}</p>
@@ -314,6 +282,7 @@ image: '/images/blogs/nepal-trek.jpg'
         <div class="portfolio-contact-cta__inner">
           <h2>Let us connect</h2>
           <p>If you would like to collaborate, discuss an idea, or just say hi, send me a message.</p>
+          <p>Email: <b>{{ site.contact.myemail }}</b></p>
           <a class="button" href="{{ site.baseurl }}/contact/">Contact</a>
         </div>
       </div>

@@ -3,12 +3,15 @@
   position: relative;
   margin-bottom: 72px;
   min-height: 470px;
+  padding-top: 0;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 
   @media only screen and (max-width: $mobile) {
     min-height: 420px;
     margin-bottom: 56px;
+    padding-top: 14px;
+    align-items: flex-end;
   }
 }
 
@@ -18,23 +21,35 @@
   overflow: hidden;
 }
 
+.portfolio-hero__video,
 .portfolio-hero__image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
+}
+
+.portfolio-hero__video {
+  z-index: 0;
+}
+
+.portfolio-hero__image {
+  z-index: -1;
 }
 
 .portfolio-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(11, 18, 33, 0.18), rgba(11, 18, 33, 0.78));
+  background:  rgba(11, 18, 33, 0.1);
 }
 
 .portfolio-hero__content {
   position: relative;
   z-index: 2;
   max-width: 860px;
-  margin: 0 0 34px;
+  margin: 0;
   padding: 28px;
   border-radius: 12px;
   background: rgba(4, 9, 17, 0.45);
@@ -105,10 +120,19 @@
 .portfolio-hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 
   .button {
-    padding: 13px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .button i {
+    font-size: 16px;
   }
 
   .button--secondary {
@@ -122,6 +146,26 @@
   }
 }
 
+.portfolio-hero__social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+
+  .social-card {
+    height: 100%;
+    margin-bottom: 0;
+  }
+
+  @media only screen and (max-width: $tablet) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media only screen and (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .portfolio-section {
   margin-bottom: 68px;
 
@@ -131,20 +175,20 @@
 }
 
 .skill-group {
-  height: calc(100% - 28px);
-  margin-bottom: 28px;
-  padding: 22px;
+  height: calc(100% - 18px);
+  margin-bottom: 18px;
+  padding: 16px;
   border-radius: 10px;
   border: 1px solid var(--border-color);
   background: var(--background-alt-color);
 }
 
 .skill-group__title {
-  margin-bottom: 16px;
-  font-size: 20px;
+  margin-bottom: 10px;
+  font-size: 17px;
 
   i {
-    margin-right: 7px;
+    margin-right: 6px;
     color: var(--brand-color);
   }
 }
@@ -152,14 +196,15 @@
 .skill-group__chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 
   span {
     display: inline-block;
     border: 1px solid var(--border-color);
     border-radius: 6px;
-    padding: 6px 10px;
-    font-size: 13px;
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 1.25;
     color: var(--text-alt-color);
     background: var(--background-color);
   }

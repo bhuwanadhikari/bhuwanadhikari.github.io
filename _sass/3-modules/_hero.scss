@@ -243,12 +243,34 @@
     border-radius: 0;
   }
 
-  img {
+  .hero__video,
+  .hero__fallback-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top; /* horizontal vertical */
+
+  }
+
+  .hero__video {
+    z-index: 1;
+    background-color: var(--background-color);
+  }
+
+  .hero__fallback-image {
+    z-index: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__video {
+      display: none;
+    }
+
+    .hero__fallback-image {
+      z-index: 1;
+    }
   }
 }

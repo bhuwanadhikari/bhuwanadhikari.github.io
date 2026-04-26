@@ -11,7 +11,20 @@
 
           <div class="hero__right">
             <div class="hero__image">
-              <img class="lazy" data-src="{{ site.hero.hero__image }}" alt="{{site.author.name}}'s Picture">
+              <video
+                class="hero__video"
+                autoplay
+                muted
+                loop
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+                poster="{{ site.hero.hero__image }}"
+                aria-label="Background video"
+              >
+                <source src="{{ site.baseurl }}/images/about/moto_vid.MP4" type="video/quicktime">
+              </video>
+              <img class="hero__fallback-image lazy" data-src="{{ site.hero.hero__image }}" alt="{{site.author.name}}'s Picture">
               <div class="hero__image__overlay"></div>
             </div>
           </div>

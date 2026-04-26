@@ -6,6 +6,7 @@ date: 2018-06-07
 image: "https://user-images.githubusercontent.com/30122001/120264949-a30c5000-c2be-11eb-94f8-4156c16ab6f4.jpg"
 tags: [arduino, C++, ATmega328, electronics, embedded, hardware]
 github: https://github.com/bhuwanadhikari/DIY-Digital-Clock
+favorite: true
 ---
 
 ## What Is It?

@@ -232,8 +232,8 @@ image: '/images/blogs/nepal-trek.jpg'
     </div>
 
     <div class="row projects-grid">
-      {% assign sorted_projects = site.projects | sort: "date" | reverse %}
-      {% for post in sorted_projects limit:3 %}
+      {% assign favorite_projects = site.projects | where: "favorite", true | sort: "date" | reverse %}
+      {% for post in favorite_projects limit:3 %}
       {% include project-card.html %}
       {% endfor %}
     </div>
@@ -252,7 +252,8 @@ image: '/images/blogs/nepal-trek.jpg'
     </div>
 
     <div class="row">
-      {% for post in site.posts limit:3 %}
+      {% assign favorite_posts = site.posts | where: "favorite", true | sort: "date" | reverse %}
+      {% for post in favorite_posts limit:3 %}
       <div class="col col-4 col-d-6 col-t-12">
         <article class="blog-card">
           <a class="blog-card__image" href="{{ post.url | prepend: site.baseurl }}">

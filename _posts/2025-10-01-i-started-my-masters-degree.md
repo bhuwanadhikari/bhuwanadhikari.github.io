@@ -6,6 +6,7 @@ date: 2025-10-01
 image: "/images/blogs/nepal-trek.jpg"
 tags: [masters degree, natural language processing, uni trier, university of trier]
 published: true
+favorite: true
 ---
 
 

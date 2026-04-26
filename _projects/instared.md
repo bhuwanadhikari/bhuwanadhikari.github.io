@@ -1,0 +1,115 @@
+---
+layout: project
+title: "Instared — Automating Reddit to Instagram with TypeScript and Cron Jobs"
+description: A bot that scrapes top posts from r/Nepal, renders them into carousel images using HTML templates and Puppeteer, then posts them to Instagram automatically.
+date: 2026-04-26
+image: "/images/projects/reddit_nepal_insta.png"
+tags: [typescript, automation, reddit, instagram, nodejs, cron]
+github: https://github.com/bhuwanadhikari/instared
+---
+
+## The Idea
+
+Most Nepalis I know are on Instagram, not Reddit. But r/Nepal has genuinely interesting content — questions, debates, experiences — that just dies quietly after a day. So I built **Instared**: a script that wakes up every day, grabs the top posts from r/Nepal, turns them into Instagram carousel images, and posts them automatically. No human in the loop.
+
+---
+
+## The lib Folder — Three Classes Running the Show
+
+The project's `src/lib` folder is organized into three independent classes, each responsible for talking to one external service:
+
+**`Reddit`** — Uses [snoowrap](https://github.com/not-an-aardvark/snoowrap) to hit the Reddit API. This is the workhorse. It fetches the top 50 posts of the day from a subreddit, applies filtering logic, fetches and trims the comment tree, and generates the carousel images.
+
+**`Instagram`** — Talks to the Facebook Graph API (Instagram's API goes through Facebook). It handles creating individual carousel item containers, assembling them into a carousel, and publishing. Three separate API calls just to post one thing — thanks, Meta.
+
+**`Imgur`** — Instagram's API only accepts publicly accessible image URLs, not local files. So every generated image gets uploaded to Imgur first to get a public link. This class handles that step.
+
+And then there's **`Instared`** — the orchestrator in `src/lib/instared/Instared.ts`. It glues the three together: get curated posts from Reddit, generate images, upload to Imgur, publish to Instagram. Clean separation of concerns.
+
+---
+
+## How Images Are Generated — HTML to PNG
+
+This is the most interesting part. Instagram carousels are images, so the script has to *generate* images. The approach: HTML templates rendered to PNG via Puppeteer.
+
+There are two templates in `src/htmls/`:
+- `post.html` — renders the original Reddit post (title, selftext, subreddit, upvotes, comment count)
+- `comment.html` — renders a single comment thread (parent + up to 3 replies)
+
+The Reddit dark theme is baked into the CSS. Dynamic values — author name, body text, thumbnail URL, upvote counts, flair colors — are injected as template variables. Then `node-html-to-image` spins up Puppeteer and renders the HTML to a 1200×1500px PNG file.
+
+One post becomes 10 images: slide 0 is the post itself, slides 1–9 are the top comments.
+
+```
+images/t3_1d5upf6__carousel_0.png   ← the post
+images/t3_1d5upf6__carousel_1.png   ← top comment
+images/t3_1d5upf6__carousel_2.png   ← 2nd comment
+...
+images/t3_1d5upf6__carousel_9.png   ← 9th comment
+```
+
+The post's Reddit ID is in the filename so you always know which images belong to which post.
+
+---
+
+## Filtering Logic — Surprisingly Strict
+
+Not every top post qualifies. `getCuratedPosts` applies several filters:
+
+- **No images or galleries** — text-only posts work best for comment carousels
+- **No videos** — same reason
+- **At least 5 comments** — a post with no discussion isn't interesting enough
+- **Character length limits** — title + selftext must fit within 930 characters; if not, selftext alone is shown; if even that's too long, the post is rejected
+
+The remaining posts are sorted by comment count — the most discussed goes first.
+
+---
+
+## The Comment Tree — More Work Than Expected
+
+Reddit comments are trees — every comment can have replies, which can have their own replies. The `makeTree` function recursively trims this to two levels deep: parent + children only. For each parent, it picks the top 3 replies by upvote count.
+
+Then another round of filtering:
+- Remove deleted comments
+- Remove comments with gifs or external links (they render badly in images)
+- Sort by a combined score: `ups + num_replies + child upvotes`
+- Trim any thread that would exceed the character limit for the image
+
+The goal is 9 usable comment slides. If there aren't enough clean comments, you get fewer. Quality over quantity.
+
+---
+
+## The Cron Job — Set It and Forget It
+
+`job.sh` is dead simple:
+
+```sh
+echo "Time of execution -----------------> `date "+%Y-%m-%d %H:%M:%S"`";
+export NODE_ENV=production && source /path/to/.env && node ~/Documents/projects/instared/build/index
+```
+
+It logs the time, loads env vars, and runs the compiled build. Point a system cron job at this and it runs every day at whatever time you set. There's also a `node-cron` setup inside `index.ts` (currently commented out) if you prefer scheduling from within the Node process:
+
+```ts
+cron.schedule("0 21 * * *", async () => {
+  // post at 9 PM every day
+});
+```
+
+One deliberate design choice: all async tasks are **sequential, not parallel**. No `Promise.all` in the upload or posting flow. The machine running this wasn't powerful, and hammering the APIs concurrently would rate-limit or crash it. Slow and steady wins the cron.
+
+---
+
+## The Gotcha — Facebook Token Expiry
+
+The one truly annoying thing: the Facebook long-lived access token expires every two months. There's no automatic refresh built in — that would need a full OAuth flow and a callback server. So every couple of months, regenerate the token and update `.env` manually. It's in the README as a known limitation. Some things aren't worth automating.
+
+---
+
+## What I Learned
+
+The Reddit and Imgur API integrations were straightforward. The Instagram/Facebook API was painful — documentation spread across multiple places, confusing terminology (containers, items, carousels, publishing — in that exact order), and unhelpful error messages.
+
+The HTML-to-image approach via Puppeteer is something I'd use again. You get full CSS layout control, font loading, even Material Icons via CDN. For generating consistent-looking images programmatically, it beats canvas drawing or any image manipulation library.
+
+The whole project is about 400 lines of actual code. Sometimes that's all it takes.

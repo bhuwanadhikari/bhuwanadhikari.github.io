@@ -305,7 +305,7 @@
 
 .timeline-item__org {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 12px;
@@ -332,6 +332,16 @@
     color: var(--text-alt-color);
     font-size: 14px;
   }
+
+  .align_center_left_img{
+    object-fit: cover;
+    object-position: left;
+    img {
+      object-fit: cover;
+
+    }
+  }
+
 }
 
 .timeline-item__org-no-logo {

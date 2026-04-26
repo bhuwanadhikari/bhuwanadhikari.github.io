@@ -34,7 +34,7 @@ social:
 hero:
   hero__title: Bhuwan Adhikari
   hero__description: Just spitting stuff here about my worldy and non worldly experiences
-  hero__image: "/images/app/hero-image.png"
+  hero__image: "/images/app/hero-image.jpg"
 
 #-------------------------------
 # Newsletter
@@ -95,12 +95,22 @@ plugins:
 # paginate: 9
 # paginate_path: "/page/:num"
 
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
 # Pages Path
 defaults:
   - scope:
       path: "_pages"
     values:
       permalink: /:basename:output_ext
+  - scope:
+      path: "_projects"
+      type: projects
+    values:
+      layout: project
 
 include:
   - _pages

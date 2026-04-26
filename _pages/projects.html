@@ -6,12 +6,12 @@ permalink: /projects/
 
 <div class="container">
   <div class="row animate">
-    {% if site.posts.size > 0 %}
-      {% for post in site.posts %}
+    {% if site.projects.size > 0 %}
+      {% for post in site.projects %}
         {% include article.html %}
       {% endfor %}
+    {% else %}
+      <p>No projects yet.</p>
     {% endif %}
   </div>
 </div>
-
-{% include section-tags.html %}

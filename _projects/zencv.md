@@ -1,0 +1,134 @@
+---
+layout: project
+title: "ZenCV — AI-Powered Job Application in 3 Clicks"
+description: A Chrome extension + dual-backend system that reads any job posting and instantly crafts a tailored CV and cover letter using LLMs.
+date: 2025-04-26
+image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&q=80&fit=crop"
+tags: [python, typescript, react, fastapi, AI, chrome-extension, openai]
+github: https://github.com/bhuwanadhikari/ZenCV-client
+---
+
+## The Problem
+
+Job hunting is brutal. You find a great posting, spend 45 minutes tweaking your CV to match the keywords, write a cover letter that doesn't sound like a robot wrote it — and then do it all over again for the next one. Multiply that by 50 applications and you've lost a week of your life.
+
+I wanted to fix that.
+
+---
+
+## What is ZenCV?
+
+**ZenCV** is a Chrome browser extension backed by two server implementations — a Python/FastAPI backend and a Node.js backend (`intellicv-server`) — that automates the most soul-crushing part of job hunting.
+
+Open a job posting. Click the extension. Get a tailored CV and cover letter in seconds.
+
+That's the whole pitch. Three clicks.
+
+---
+
+## How It Works
+
+```
+Job Posting Page
+      |
+[ZenCV Chrome Extension]  ← React + TypeScript
+      |
+      ↓
+POST /api/job-description/process
+      |
+[ZenCV Server]  ← FastAPI (Python) or IntelliCV Server (Node.js)
+      |
+      ↓
+LLM (gpt-4.1-mini)
+      |
+Tailored CV JSON + Cover Letter
+      |
+[Extension renders templates + export]
+```
+
+1. **Extract** — The extension grabs and cleans the job posting HTML from your active tab using Chrome's scripting API.
+2. **Match** — The backend scans your stored `cv_variants.json` — multiple versions of your experience — and picks the most relevant bullets, skills, and summaries.
+3. **Generate** — An LLM rewrites and tailors the content to match the job description's language and priorities.
+4. **Export** — Choose from 6 CV templates, preview, and export via browser print or draft directly into Gmail.
+
+---
+
+## The Repos
+
+| Repo | Stack | Role |
+|------|-------|------|
+| [`ZenCV-client`](https://github.com/bhuwanadhikari/ZenCV-client) | React, TypeScript, Tailwind, Vite | Chrome extension UI |
+| [`ZenCV-server`](https://github.com/bhuwanadhikari/ZenCV-server) | Python, FastAPI, OpenAI SDK | Primary AI backend |
+| `intellicv-server` | Node.js | Alternative/original backend implementation |
+
+The client is backend-agnostic — just point `VITE_API_BASE_URL` at whichever server you're running.
+
+---
+
+## Tech Stack Deep Dive
+
+### ZenCV Client (Chrome Extension)
+- **React + TypeScript** for the popup UI
+- **Tailwind CSS** for styling across 6 CV templates
+- **Vite** for build tooling with hot-reload dev mode
+- Chrome's `scripting` API to reach into the active tab's DOM
+- Gmail integration to open cover letters as compose drafts
+
+### ZenCV Server (Python / FastAPI)
+- **FastAPI** for clean, auto-documented REST endpoints (`/docs` ships with Swagger UI)
+- **OpenAI-compatible** — works with any provider supporting the OpenAI API spec
+- **Multi-variant CV system** — store different versions of your professional history; the LLM picks the best fit
+- Artifact caching by job URL hash so repeated requests don't cost tokens
+- Token usage + cost tracking in every response summary
+
+### IntelliCV Server (Node.js)
+- The original backend implementation
+- Same API contract, different runtime — useful if you prefer staying in the JS ecosystem
+
+---
+
+## The Data Model
+
+The secret sauce is `cv_variants.json` — instead of one CV, you maintain multiple variants of each section:
+
+```json
+{
+  "variants": [
+    {
+      "label": "backend-focus",
+      "summary": "Backend engineer with 4 years in distributed systems...",
+      "skills": ["Python", "PostgreSQL", "Docker", "Kubernetes"],
+      "experience": [...]
+    },
+    {
+      "label": "fullstack-focus",
+      "summary": "Fullstack developer comfortable across the entire stack...",
+      "skills": ["React", "TypeScript", "Node.js", "FastAPI"],
+      "experience": [...]
+    }
+  ]
+}
+```
+
+The LLM reads the job description, picks the right variant, rewrites the bullets to echo the posting's language, and outputs a structured CV JSON ready for the template engine.
+
+---
+
+## What I Learned
+
+**LLM prompt engineering is 80% of the work.** Getting the model to select the right variant, stay factually grounded (no hallucinated experience), and match the tone of the job posting without being sycophantic took a lot of iteration.
+
+**Chrome extensions are surprisingly painful.** Manifest V3, content security policies, and the quirks around `chrome://` pages make development feel like navigating a minefield. The real-time extension reloading setup in dev mode saved my sanity.
+
+**Two backends, one contract.** Maintaining both a Python and Node.js server forced me to think hard about API design upfront. The REST contract is clean enough that swapping backends is a single env var change.
+
+**Cost matters.** I added token tracking from day one — every generated artifact writes a `summary.json` with usage stats. Even at `gpt-4.1-mini` prices, it adds up across hundreds of applications, and knowing the cost per generation shaped prompt length decisions.
+
+---
+
+## What's Next
+
+- PDF export without the print dialog hack
+- Authentication so the server can be hosted publicly
+- Smarter variant selection using embedding similarity rather than pure LLM reasoning
+- Support for non-English job postings

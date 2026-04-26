@@ -16,9 +16,15 @@
   .row {
     margin-left: 0;
     margin-right: 0;
-    gap: 12px;
+    gap: 20px;
     align-items: center;
+    flex-wrap: nowrap;
   }
+}
+
+.article__content {
+  flex: 1;
+  min-width: 0;
 }
 
 .article__head {

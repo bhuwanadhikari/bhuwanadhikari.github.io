@@ -156,6 +156,32 @@
   margin-bottom: 0;
 }
 
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-color);
+  color: var(--heading-font-color);
+  background-color: var(--background-alt-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background-color: #24292e;
+    border-color: #24292e;
+    color: #fff;
+  }
+}
+
 .post__meta {
   display: flex;
   align-items: center;

@@ -120,4 +120,4 @@ While hiring a guide ensures safety, keep these tips in mind:
 ### Final Thoughts
 
 An independent trekking guide can transform your Himalayan adventure into a personalized and unforgettable experience. By investing time in finding a trustworthy and skilled guide, you’ll not only ensure safety but also gain deeper insights into Nepal’s rich culture and natural beauty.
-The right guide doesn’t just lead you through trails—they help you create memories that last a lifetime. Choose wisely, and enjoy the trek of your dreams!
+The right guide doesn’t just lead you through trails, they help you create memories that last a lifetime. Choose wisely, and enjoy the trek of your dreams!

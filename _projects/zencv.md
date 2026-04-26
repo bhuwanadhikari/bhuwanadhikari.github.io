@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "ZenCV — AI-Powered Job Application in 3 Clicks"
+title: "ZenCV: AI-Powered Job Application in 3 Clicks"
 description: A Chrome extension + dual-backend system that reads any job posting and instantly crafts a tailored CV and cover letter using LLMs.
 date: 2025-04-26
 image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&q=80&fit=crop"
@@ -10,7 +10,7 @@ github: https://github.com/bhuwanadhikari/ZenCV-client
 
 ## The Problem
 
-Job hunting is brutal. You find a great posting, spend 45 minutes tweaking your CV to match the keywords, write a cover letter that doesn't sound like a robot wrote it — and then do it all over again for the next one. Multiply that by 50 applications and you've lost a week of your life.
+Job hunting is brutal. You find a great posting, spend 45 minutes tweaking your CV to match the keywords, write a cover letter that doesn't sound like a robot wrote it, and then do it all over again for the next one. Multiply that by 50 applications and you've lost a week of your life.
 
 I wanted to fix that.
 
@@ -18,7 +18,7 @@ I wanted to fix that.
 
 ## What is ZenCV?
 
-**ZenCV** is a Chrome browser extension backed by two server implementations — a Python/FastAPI backend and a Node.js backend (`intellicv-server`) — that automates the most soul-crushing part of job hunting.
+**ZenCV** is a Chrome browser extension backed by a Python/FastAPI backend and a Node.js backend (`intellicv-server`), that automates the most soul-crushing part of job hunting.
 
 Open a job posting. Click the extension. Get a tailored CV and cover letter in seconds.
 
@@ -46,10 +46,10 @@ Tailored CV JSON + Cover Letter
 [Extension renders templates + export]
 ```
 
-1. **Extract** — The extension grabs and cleans the job posting HTML from your active tab using Chrome's scripting API.
-2. **Match** — The backend scans your stored `cv_variants.json` — multiple versions of your experience — and picks the most relevant bullets, skills, and summaries.
-3. **Generate** — An LLM rewrites and tailors the content to match the job description's language and priorities.
-4. **Export** — Choose from 6 CV templates, preview, and export via browser print or draft directly into Gmail.
+1. **Extract**: The extension grabs and cleans the job posting HTML from your active tab using Chrome's scripting API.
+2. **Match**: The backend scans your stored `cv_variants.json` (multiple versions of your experience) and picks the most relevant bullets, skills, and summaries.
+3. **Generate**: An LLM rewrites and tailors the content to match the job description's language and priorities.
+4. **Export**: Choose from 6 CV templates, preview, and export via browser print or draft directly into Gmail.
 
 ---
 
@@ -61,7 +61,7 @@ Tailored CV JSON + Cover Letter
 | [`ZenCV-server`](https://github.com/bhuwanadhikari/ZenCV-server) | Python, FastAPI, OpenAI SDK | Primary AI backend |
 | `intellicv-server` | Node.js | Alternative/original backend implementation |
 
-The client is backend-agnostic — just point `VITE_API_BASE_URL` at whichever server you're running.
+The client is backend-agnostic, just point `VITE_API_BASE_URL` at whichever server you're running.
 
 ---
 
@@ -76,20 +76,20 @@ The client is backend-agnostic — just point `VITE_API_BASE_URL` at whichever s
 
 ### ZenCV Server (Python / FastAPI)
 - **FastAPI** for clean, auto-documented REST endpoints (`/docs` ships with Swagger UI)
-- **OpenAI-compatible** — works with any provider supporting the OpenAI API spec
-- **Multi-variant CV system** — store different versions of your professional history; the LLM picks the best fit
+- **OpenAI-compatible**: works with any provider supporting the OpenAI API spec
+- **Multi-variant CV system**: store different versions of your professional history; the LLM picks the best fit
 - Artifact caching by job URL hash so repeated requests don't cost tokens
 - Token usage + cost tracking in every response summary
 
 ### IntelliCV Server (Node.js)
 - The original backend implementation
-- Same API contract, different runtime — useful if you prefer staying in the JS ecosystem
+- Same API contract, different runtime. Useful if you prefer staying in the JS ecosystem.
 
 ---
 
 ## The Data Model
 
-The secret sauce is `cv_variants.json` — instead of one CV, you maintain multiple variants of each section:
+The key is `cv_variants.json`. Instead of one CV, you maintain multiple variants of each section:
 
 ```json
 {
@@ -122,7 +122,7 @@ The LLM reads the job description, picks the right variant, rewrites the bullets
 
 **Two backends, one contract.** Maintaining both a Python and Node.js server forced me to think hard about API design upfront. The REST contract is clean enough that swapping backends is a single env var change.
 
-**Cost matters.** I added token tracking from day one — every generated artifact writes a `summary.json` with usage stats. Even at `gpt-4.1-mini` prices, it adds up across hundreds of applications, and knowing the cost per generation shaped prompt length decisions.
+**Cost matters.** I added token tracking from day one. Every generated artifact writes a `summary.json` with usage stats. Even at `gpt-4.1-mini` prices, it adds up across hundreds of applications, and knowing the cost per generation shaped prompt length decisions.
 
 ---
 

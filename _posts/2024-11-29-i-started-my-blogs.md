@@ -5,7 +5,7 @@ description: After a long time of having my own domain, I have now started writi
 date: 2024-11-29
 image: "/images/blogs/001.png"
 tags: [blog]
-favorite: false
+favorite: true
 ---
 
 

@@ -1,0 +1,37 @@
+<!-- begin hero blogs -->
+{% assign hero_image = page.hero_image | default: site.hero.hero__image | relative_url %}
+{% assign hero_video = page.hero_video | default: site.hero.hero__video | relative_url %}
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="hero__inner">
+          <div class="hero__left">
+            <h1 class="hero__title">{{ page.hero_title | default: page.title }}</h1>
+            <p class="hero__description">{{ page.hero_description }}</p>
+          </div>
+
+          <div class="hero__right">
+            <div class="hero__image" style="background-image: url('{{ hero_image }}');">
+              <video
+                class="hero__video"
+                autoplay
+                muted
+                loop
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+                aria-label="Background video"
+              >
+                <source src="{{ hero_video }}" type="video/mp4">
+              </video>
+              <div class="hero__image__overlay"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end hero blogs -->

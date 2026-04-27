@@ -2,14 +2,15 @@
 layout: default
 title: Projects
 permalink: /projects/
+hero_title: Projects
+hero_description: A showcase of my personal projects and experiments
+hero_image: /images/projects/circuit_custom.png
 ---
+
+{% include hero-projects.html %}
 
 <div class="container">
   <div class="row">
-    <div class="col col-12">
-      <h1 class="section__title projects-page__title">Projects</h1>
-    </div>
-  </div>
   <div class="row projects-grid animate">
     {% assign favorite_projects = site.projects | where: "favorite", true | sort: "date" | reverse %}
     {% if favorite_projects.size > 0 %}

@@ -1,13 +1,5 @@
-# k vairaa xa ta?
+# k vairaa xa
 
-currently firebase deploy is used, so to deploy:
+github pages maa deployed xa
 
-`firebase deploy` 
-
-if fails make sure `firebase login` works
-
-tara paila do 
-
-`bundle exec jekyll build` so _site is populated before deployment
-
-`thecrowapp` firebase command
+to build or to serve => (/opt/homebrew/opt/ruby/bin/bundle jekyll build or serve)

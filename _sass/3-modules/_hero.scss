@@ -242,18 +242,21 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #00000066;
+  background-color: #00000077;
 }
 
 .hero__image {
   position: relative;
   transform: translate(0);
   width: 100%;
-  height: 250px;
+  height: 230px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
   background-color: var(--background-color);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   user-select: none;
 
   @media only screen and (max-width: $mobile) {

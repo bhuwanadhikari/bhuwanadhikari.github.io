@@ -7,4 +7,7 @@ currently firebase deploy is used, so to deploy:
 if fails make sure `firebase login` works
 
 tara paila do 
+
 `bundle exec jekyll build` so _site is populated before deployment
+
+`thecrowapp` firebase command

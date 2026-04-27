@@ -47,6 +47,10 @@ A seven-segment display is one of the simplest ways to show numbers electronical
 
 ![7-segment display diagram](/images/projects/7seg-display.svg)
 
+Here is the display in its gloriously naked form, before the rest of the clock grew around it. The LED bulbs used here were lent to me by a friend, which is basically how this project qualified as both electronics and social networking.
+
+![7-segment display prototype](/images/projects/7seg_display_naked.jpg)
+
 To show four digits (like `12:34`), four of these units sit side by side. Driving all 28 segments individually would need 28 pins, so instead the firmware **multiplexes**: it activates one digit at a time in rapid succession (~1 kHz), fast enough that the eye perceives all four as simultaneously lit.
 
 ---
@@ -61,7 +65,7 @@ To show four digits (like `12:34`), four of these units sit side by side. Drivin
 
 Beyond the clock, the display also shows ambient temperature using an **LM35** analog sensor. The LM35 outputs 10 mV per °C directly, no calibration formula needed. The ATmega's ADC reads the voltage, converts it to degrees, and the firmware pushes it onto the same four-digit panel.
 
-![Temperature reading on the display](/images/projects/temperature_display.png)
+![Temperature reading on the display](/images/projects/7seg_temperature_display.png)
 
 The photo above shows the display reading **24°C**. The same four segments that show `12:34` a moment earlier now show `24°C`. One panel, multiple modes.
 

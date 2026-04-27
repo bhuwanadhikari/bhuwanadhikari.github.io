@@ -10,6 +10,12 @@
           <div class="hero-about__content">
             <h1 class="hero-about__title">{{ site.author.author__name }}</h1>
             <p class="hero-about__bio">{{ site.author.author__bio }}</p>
+            {% if site.hero.hero__caption %}
+            <div class="hero-about__caption">
+              <p class="hero-about__caption-text">{{ site.hero.hero__caption }}</p>
+              {% if site.hero.hero__caption_date %}<p class="hero-about__caption-date">{{ site.hero.hero__caption_date }}</p>{% endif %}
+            </div>
+            {% endif %}
           </div>
         </div>
       </div>

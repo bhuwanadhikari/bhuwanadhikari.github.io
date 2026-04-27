@@ -26,6 +26,12 @@
                 <source src="{{ hero_video }}" type="video/mp4">
               </video>
               <div class="hero__image__overlay"></div>
+              {% if page.hero_caption or site.hero.hero__caption %}
+              <div class="hero__caption">
+                <p class="hero__caption-text">{{ page.hero_caption | default: site.hero.hero__caption }}</p>
+                {% if page.hero_caption_date or site.hero.hero__caption_date %}<p class="hero__caption-date">{{ page.hero_caption_date | default: site.hero.hero__caption_date }}</p>{% endif %}
+              </div>
+              {% endif %}
             </div>
           </div>
 

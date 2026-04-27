@@ -27,6 +27,12 @@
               </video>
               <img class="hero__fallback-image lazy" data-src="{{ site.hero.hero__image }}" alt="{{site.author.name}}'s Picture">
               <div class="hero__image__overlay"></div>
+              {% if site.hero.hero__caption %}
+              <div class="hero__caption">
+                <p class="hero__caption-text">{{ site.hero.hero__caption }}</p>
+                {% if site.hero.hero__caption_date %}<p class="hero__caption-date">{{ site.hero.hero__caption_date }}</p>{% endif %}
+              </div>
+              {% endif %}
             </div>
           </div>
 

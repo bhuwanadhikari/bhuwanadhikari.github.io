@@ -8,6 +8,12 @@ image: '/images/blogs/nepal-trek.jpg'
   <div class="portfolio-hero__image-wrap">
     <img class="portfolio-hero__image" src="{{ site.baseurl }}/images/app/hero-image.jpg" alt="Mountain landscape in Nepal">
     <div class="portfolio-hero__overlay"></div>
+    {% if site.hero.hero__caption %}
+    <div class="portfolio-hero__caption">
+      <p class="portfolio-hero__caption-text">{{ site.hero.hero__caption }}</p>
+      {% if site.hero.hero__caption_date %}<p class="portfolio-hero__caption-date">{{ site.hero.hero__caption_date }}</p>{% endif %}
+    </div>
+    {% endif %}
   </div>
   <div class="container">
     <div class="row">

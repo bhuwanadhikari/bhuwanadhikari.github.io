@@ -348,7 +348,7 @@
 
 .timeline-item__org {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 12px;
@@ -374,6 +374,13 @@
   span {
     color: var(--text-alt-color);
     font-size: 14px;
+  }
+
+  .timeline-item__org-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .align_center_left_img{

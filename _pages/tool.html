@@ -1,0 +1,218 @@
+---
+layout: page
+title: Tool
+description: Encode and decode text with two secret keys.
+permalink: /tool/
+---
+
+<div class="tool-page">
+  <div class="tool-page__intro">
+    <p>Use both secret keys for both directions. Encode turns plain text into encrypted output, and decode restores the original text from the encrypted payload.</p>
+  </div>
+
+  <div class="tool-grid">
+    <section class="tool-card" aria-labelledby="encode-title">
+      <div class="tool-card__head">
+        <h2 id="encode-title">Encode</h2>
+        <p>Enter both secret keys and plain text to generate encrypted output.</p>
+      </div>
+
+      <div class="form__group">
+        <label class="form__label screen-reader-text" for="encode-key1">Secret key 1</label>
+        <input class="form__input" id="encode-key1" type="password" placeholder="Secret key 1" autocomplete="off">
+      </div>
+
+      <div class="form__group">
+        <label class="form__label screen-reader-text" for="encode-key2">Secret key 2</label>
+        <input class="form__input" id="encode-key2" type="password" placeholder="Secret key 2" autocomplete="off">
+      </div>
+
+      <div class="form__group">
+        <label class="form__label screen-reader-text" for="encode-plain">Plain text</label>
+        <textarea class="form__input" id="encode-plain" rows="8" placeholder="Plain text"></textarea>
+      </div>
+
+      <div class="form__group tool-card__actions">
+        <button class="button button--primary" type="button" data-action="encode">Encode</button>
+      </div>
+
+      <div class="form__group">
+        <label class="form__label screen-reader-text" for="encode-output">Encoded output</label>
+        <textarea class="form__input tool-card__output" id="encode-output" rows="8" placeholder="Encrypted output" readonly></textarea>
+        <div class="tool-card__status" data-status-for="encode" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="tool-card" aria-labelledby="decode-title">
+      <div class="tool-card__head">
+        <h2 id="decode-title">Decode</h2>
+        <p>Enter both secret keys and encrypted text to restore plain text.</p>
+      </div>
+
+      <div class="form__group">
+        <label class="form__label screen-reader-text" for="decode-key1">Secret key 1</label>
+        <input class="form__input" id="decode-key1" type="password" placeholder="Secret key 1" autocomplete="off">
+      </div>
+
+      <div class="form__group">
+        <label class="form__label screen-reader-text" for="decode-key2">Secret key 2</label>
+        <input class="form__input" id="decode-key2" type="password" placeholder="Secret key 2" autocomplete="off">
+      </div>
+
+      <div class="form__group">
+        <label class="form__label screen-reader-text" for="decode-cipher">Encrypted text</label>
+        <textarea class="form__input" id="decode-cipher" rows="8" placeholder="Encrypted text"></textarea>
+      </div>
+
+      <div class="form__group tool-card__actions">
+        <button class="button button--primary" type="button" data-action="decode">Decode</button>
+      </div>
+
+      <div class="form__group">
+        <label class="form__label screen-reader-text" for="decode-output">Decoded output</label>
+        <textarea class="form__input tool-card__output" id="decode-output" rows="8" placeholder="Plain text" readonly></textarea>
+        <div class="tool-card__status" data-status-for="decode" aria-live="polite"></div>
+      </div>
+    </section>
+  </div>
+
+  <p class="tool-card__note">Encryption uses AES-GCM with a key derived from combining both secret keys. The encoded value includes the IV, so you need both secret keys and encrypted text to decode it.</p>
+</div>
+
+<script>
+  (() => {
+    const page = document.querySelector('.tool-page');
+
+    if (!page || !window.crypto || !window.crypto.subtle) {
+      return;
+    }
+
+    const encoder = new TextEncoder();
+    const decoder = new TextDecoder();
+
+    const encodeKey1Input = document.getElementById('encode-key1');
+    const encodeKey2Input = document.getElementById('encode-key2');
+    const encodePlainInput = document.getElementById('encode-plain');
+    const encodeOutput = document.getElementById('encode-output');
+    const decodeKey1Input = document.getElementById('decode-key1');
+    const decodeKey2Input = document.getElementById('decode-key2');
+    const decodeCipherInput = document.getElementById('decode-cipher');
+    const decodeOutput = document.getElementById('decode-output');
+
+    const statusNodes = {
+      encode: page.querySelector('[data-status-for="encode"]'),
+      decode: page.querySelector('[data-status-for="decode"]')
+    };
+
+    const setStatus = (name, message, type = '') => {
+      const node = statusNodes[name];
+      if (!node) return;
+
+      node.textContent = message;
+      node.className = 'tool-card__status';
+
+      if (type) {
+        node.classList.add(`tool-card__status--${type}`);
+      }
+    };
+
+    const bytesToBase64 = (bytes) => {
+      let binary = '';
+      for (const byte of bytes) {
+        binary += String.fromCharCode(byte);
+      }
+      return btoa(binary);
+    };
+
+    const base64ToBytes = (base64) => {
+      const binary = atob(base64.replace(/\s+/g, ''));
+      const bytes = new Uint8Array(binary.length);
+
+      for (let index = 0; index < binary.length; index += 1) {
+        bytes[index] = binary.charCodeAt(index);
+      }
+
+      return bytes;
+    };
+
+    const deriveKey = async (secretKey) => {
+      const hashedKey = await crypto.subtle.digest('SHA-256', encoder.encode(secretKey));
+
+      return crypto.subtle.importKey('raw', hashedKey, { name: 'AES-GCM' }, false, ['encrypt', 'decrypt']);
+    };
+
+    const encodeText = async (secretKey, plainText) => {
+      const key = await deriveKey(secretKey);
+      const iv = crypto.getRandomValues(new Uint8Array(12));
+      const encrypted = await crypto.subtle.encrypt(
+        { name: 'AES-GCM', iv },
+        key,
+        encoder.encode(plainText)
+      );
+
+      const encryptedBytes = new Uint8Array(encrypted);
+      const combined = new Uint8Array(iv.length + encryptedBytes.length);
+
+      combined.set(iv);
+      combined.set(encryptedBytes, iv.length);
+
+      return bytesToBase64(combined);
+    };
+
+    const decodeText = async (secretKey, cipherText) => {
+      const key = await deriveKey(secretKey);
+      const bytes = base64ToBytes(cipherText);
+      const iv = bytes.slice(0, 12);
+      const encryptedBytes = bytes.slice(12);
+      const decrypted = await crypto.subtle.decrypt(
+        { name: 'AES-GCM', iv },
+        key,
+        encryptedBytes
+      );
+
+      return decoder.decode(decrypted);
+    };
+
+    page.querySelector('[data-action="encode"]').addEventListener('click', async () => {
+      setStatus('encode', '');
+
+      try {
+        const secretKey1 = encodeKey1Input.value.trim();
+        const secretKey2 = encodeKey2Input.value.trim();
+        const plainText = encodePlainInput.value;
+
+        if (!secretKey1 || !secretKey2 || !plainText) {
+          setStatus('encode', 'Add both secret keys and plain text.', 'error');
+          return;
+        }
+
+        const combinedKey = secretKey1 + secretKey2;
+        encodeOutput.value = await encodeText(combinedKey, plainText);
+        setStatus('encode', 'Encrypted output generated.', 'success');
+      } catch (error) {
+        setStatus('encode', 'Unable to encode the provided text.', 'error');
+      }
+    });
+
+    page.querySelector('[data-action="decode"]').addEventListener('click', async () => {
+      setStatus('decode', '');
+
+      try {
+        const secretKey1 = decodeKey1Input.value.trim();
+        const secretKey2 = decodeKey2Input.value.trim();
+        const cipherText = decodeCipherInput.value.trim();
+
+        if (!secretKey1 || !secretKey2 || !cipherText) {
+          setStatus('decode', 'Add both secret keys and encrypted text.', 'error');
+          return;
+        }
+
+        const combinedKey = secretKey1 + secretKey2;
+        decodeOutput.value = await decodeText(combinedKey, cipherText);
+        setStatus('decode', 'Plain text restored.', 'success');
+      } catch (error) {
+        setStatus('decode', 'Unable to decode the encrypted text. Check the keys and input format.', 'error');
+      }
+    });
+  })();
+</script>

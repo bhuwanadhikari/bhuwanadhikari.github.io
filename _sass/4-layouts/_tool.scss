@@ -1,0 +1,78 @@
+.tool-page {
+  .tool-page__intro {
+    max-width: 760px;
+    margin-bottom: 32px;
+
+    p {
+      color: var(--text-alt-color);
+    }
+  }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+
+    @media only screen and (max-width: $desktop) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .tool-card {
+    padding: 28px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: linear-gradient(180deg, var(--background-alt-color), var(--background-color));
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.04);
+  }
+
+  .tool-card__head {
+    margin-bottom: 20px;
+
+    h2 {
+      margin-bottom: 8px;
+      font-size: 24px;
+    }
+
+    p {
+      color: var(--text-alt-color);
+    }
+  }
+
+  .tool-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .tool-card__output {
+    min-height: 140px;
+    font-family: inherit;
+    resize: vertical;
+  }
+
+  .tool-card__status {
+    min-height: 22px;
+    margin-top: 8px;
+    color: var(--text-alt-color);
+    font-size: 14px;
+  }
+
+  .tool-card__status--error {
+    color: #c0392b;
+  }
+
+  .tool-card__status--success {
+    color: var(--brand-color);
+  }
+
+  .tool-card__note {
+    margin-top: 16px;
+    color: var(--text-alt-color);
+    font-size: 14px;
+  }
+
+  .form__input[readonly] {
+    cursor: text;
+  }
+}

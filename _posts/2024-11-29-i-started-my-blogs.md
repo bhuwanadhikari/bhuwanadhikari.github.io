@@ -3,7 +3,7 @@ layout: post
 title: So, I started my blog
 description: After a long time of having my own domain, I have now started writing blogs
 date: 2024-11-29
-image: "/images/blogs/001.png"
+image: "/images/blogs/hills_of_home.jpg"
 tags: [blog]
 favorite: true
 ---

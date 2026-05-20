@@ -3,7 +3,7 @@ layout: post
 title: "I started my MSc. in Natural Language Processing"
 description: After five years in software engineering, I'm shifting gears into AI and NLP with a master's degree in Germany.
 date: 2025-10-01
-image: "/images/blogs/nepal-trek.jpg"
+image: "/images/blogs/trier.jpg"
 tags: [masters degree, natural language processing, uni trier, university of trier]
 published: true
 favorite: true

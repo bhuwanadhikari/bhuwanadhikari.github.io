@@ -14,8 +14,9 @@ hero_caption_date: "Jan 2025"
 
 <div class="container">
   <div class="row animate">
-    {% if site.posts.size > 0 %}
-      {% for post in site.posts %}
+    {% assign published_posts = site.posts | where: "published", true | sort: "date" | reverse %}
+    {% if published_posts.size > 0 %}
+      {% for post in published_posts %}
         {% include article.html %}
       {% endfor %}
     {% endif %}

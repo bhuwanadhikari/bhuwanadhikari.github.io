@@ -14,9 +14,9 @@ hero_caption_date: "Jul 2018"
 <div class="container">
   <div class="row">
   <div class="row projects-grid animate">
-    {% assign favorite_projects = site.projects | where: "favorite", true | sort: "date" | reverse %}
-    {% if favorite_projects.size > 0 %}
-      {% for post in favorite_projects %}
+    {% assign published_projects = site.projects | where: "published", true | sort: "date" | reverse %}
+    {% if published_projects.size > 0 %}
+      {% for post in published_projects %}
         {% include project-card.html %}
       {% endfor %}
     {% else %}

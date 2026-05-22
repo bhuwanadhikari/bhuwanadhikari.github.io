@@ -7,6 +7,7 @@ image: "https://user-images.githubusercontent.com/30122001/120264949-a30c5000-c2
 tags: [arduino, C++, ATmega328, electronics, embedded, hardware]
 github: https://github.com/bhuwanadhikari/DIY-Digital-Clock
 favorite: true
+published: true
 ---
 
 ## What Is It?

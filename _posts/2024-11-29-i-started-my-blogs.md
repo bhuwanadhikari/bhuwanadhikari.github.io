@@ -6,6 +6,7 @@ date: 2024-11-29
 image: "/images/blogs/hills_of_home.jpg"
 tags: [blog]
 favorite: true
+published: true
 ---
 
 

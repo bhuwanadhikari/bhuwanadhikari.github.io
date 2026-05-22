@@ -33,13 +33,17 @@ document.addEventListener("DOMContentLoaded", function() {
     menuList.classList.remove("is-open");
   }
 
-  searchOpenIcon.addEventListener("click", () => {
-    searchOpen();
-  });
+  if (searchOpenIcon) {
+    searchOpenIcon.addEventListener("click", () => {
+      searchOpen();
+    });
+  }
 
-  searchCloseIcon.addEventListener("click", () => {
-    searchClose();
-  });
+  if (searchCloseIcon) {
+    searchCloseIcon.addEventListener("click", () => {
+      searchClose();
+    });
+  }
 
   function searchOpen() {
     search.classList.add("is-visible");

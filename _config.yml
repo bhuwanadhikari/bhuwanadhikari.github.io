@@ -45,30 +45,6 @@ hero:
 # mailchimp__input__text: Subscribe here
 # mailchimp__button__text: Subscribe to our newsletter
 
-#-------------------------------
-# Gallery Footer Section
-gallery:
-  gallery__title: Gallery
-  gallery__columns: 3
-  gallery__images:
-    - alt: "Rest"
-      url: "/images/bayes/bayes1.jpg"
-    - alt: "Bayes"
-      url: "/images/bayes/bayes2.JPG"
-    - alt: "Bayes2"
-      url: "/images/bayes/bayes3.JPG"
-    - alt: "Bayes3"
-      url: "/images/bayes/bayes4.jpg"
-    - alt: "Rest"
-      url: "/images/bayes/du-background-img.jpg"
-    - alt: "Hobby"
-      url: "/images/timeseries/ts4.jpg"
-    - alt: "Fashion"
-      url: "/images/timeseries/ts2.jpeg"
-    - alt: "Notes"
-      url: "/images/timeseries/ts3.jpg"
-    - alt: "Rest"
-      url: "/images/timeseries/ts1.jpeg"
 
 #-------------------------------
 # Contact Settings

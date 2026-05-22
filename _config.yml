@@ -1,19 +1,26 @@
 # ---
 #-------------------------------
 # Site Settings
-title: Bhuwan
+title: Bhuwan Adhikari
+tagline: MSc NLP Student & Software Engineer
 # logo: "/images/logo/ftg-logo.png"
-description: Bhuwan Adhikari Portfolio and Blogs
+description: Portfolio and blog of Bhuwan Adhikari — MSc NLP student at Universität Trier and software engineer with 4+ years of experience in web, mobile, and AI.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bhuwanadhikari.com.np" # the base hostname & protocol for your site, e.g. http://example.com
+og_image: "/images/app/hero-image.jpg"
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
 
 #-------------------------------
 # Author Settings
 author:
   author__name: Bhuwan Adhikari
-  author__bio: Software Developer and Roaming Around
+  author__bio: MSc NLP Student & AI Software Engineer
   author__avatar: "/images/logo/ftg-logo-trans.png"
+
+# Social profile usernames for structured data
+github_username: bhuwanadhikari
+linkedin_username: bhuwanadhikari
+instagram_username: adh_bhuwan
 
 social:
   # - {icon: "ion-logo-twitter", link: " https://twitter.com/pocketheythere"}

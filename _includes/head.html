@@ -3,22 +3,50 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}'>
+  <!-- Title: homepage gets "Name | Tagline", inner pages get "Page Title | Name" -->
+  {% if page.url == "/" %}
+  <title>{{ site.title }} | {{ site.tagline }}</title>
+  {% elsif page.title %}
+  <title>{{ page.title }} | {{ site.title }}</title>
+  {% else %}
+  <title>{{ site.title }}</title>
+  {% endif %}
+
+  <!-- Primary meta -->
+  <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}'>
+  <meta name="author" content="{{ site.author.author__name }}">
+  {% if page.tags.size > 0 %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 
+  <!-- Determine og:image: use page image if present, fall back to site default -->
+  {% if page.image %}{% assign og_image = page.image | absolute_url %}{% else %}{% assign og_image = site.og_image | absolute_url %}{% endif %}
+
+  <!-- Open Graph -->
+  {% if page.layout == "post" or page.path contains "_posts" %}{% assign og_type = "article" %}{% else %}{% assign og_type = "website" %}{% endif %}
+  <meta property="og:type" content="{{ og_type }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <meta property="og:title" content="{% if page.url == "/" %}{{ site.title }} | {{ site.tagline }}{% elsif page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.url == "/" %}{{ site.description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}">
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% if page.url == "/" %}{{ site.title }}{% else %}{{ page.title }} – {{ site.title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.url == "/" %}{{ site.description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% else %}{{ page.excerpt | strip_html | xml_escape }}{% endif %}">
-  <meta name="twitter:image:src" content="{{ page.image | absolute_url }}">
+  <meta name="twitter:title" content="{% if page.url == "/" %}{{ site.title }} | {{ site.tagline }}{% elsif page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.url == "/" %}{{ site.description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}">
+  <meta name="twitter:image" content="{{ og_image }}">
+  {% if site.twitter_username %}
+  <meta name="twitter:site" content="@{{ site.twitter_username }}">
+  <meta name="twitter:creator" content="@{{ site.twitter_username }}">
+  {% endif %}
 
-  <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="{% if page.url == "/" %}{{ site.title }}{% else %}{{ page.title }} – {{ site.title }}{% endif %}">
-  <meta property="og:description" content="{% if page.url == "/" %}{{ site.description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% else %}{{ page.excerpt | strip_html | xml_escape }}{% endif %}">
-  <meta property="og:image" content="{{ page.image | absolute_url }}">
+  <!-- JSON-LD Structured Data -->
+  {% include seo-schema.html %}
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">

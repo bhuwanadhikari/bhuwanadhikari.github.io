@@ -5,7 +5,7 @@ description: Designing and hand-making an ATmega328 PCB for our engineering expo
 date: 2020-07-20
 image: "/images/projects/pcb_3d_colored.jpg"
 tags: [electronics, PCB, Eagle CAD, ATmega328, robotics, embedded]
-favorite: true
+favorite: false
 ---
 
 One of my friends and I decided we would build a self-balancing robot for our engineering expo. In our group, I was known as the guy with the steadiest hand and the cleanest solder joints, so the PCB responsibility naturally landed on me. We could have gone with an easy off-the-shelf controller setup, but we wanted to build our own board from scratch.

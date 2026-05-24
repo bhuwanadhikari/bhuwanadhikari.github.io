@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "DIY Digital Clock: Time, Temperature & Sound on a 7-Segment Display"
+title: "DIY Digital Clock"
 description: A handbuilt four-digit seven-segment digital clock that displays current time, temperature, and sound intensity using an ATmega328 microcontroller.
 date: 2018-06-07
 image: "https://user-images.githubusercontent.com/30122001/120264949-a30c5000-c2be-11eb-94f8-4156c16ab6f4.jpg"

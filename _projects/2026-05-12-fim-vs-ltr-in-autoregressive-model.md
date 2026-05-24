@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Does Showing Both Ends Help? FIM vs LTR in Code Generation"
+title: "FIM vs LTR in Code Generation"
 description: An experiment comparing Fill-in-the-Middle vs Left-to-Right prompting on DeepSeekCoder 1.3B, showing FIM triples unit test pass rate on HumanEval Infilling.
 date: 2026-05-12
 image: "/images/projects/fim_vs_ltr_thumbnail.png"

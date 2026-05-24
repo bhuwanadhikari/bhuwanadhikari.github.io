@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "How I Built Medicochain: A Blockchain-Powered Drug Anti-Counterfeiting Platform Using Hyperledger Fabric"
+title: "Medicochain"
 description: Medicochain tracks drug provenance across the entire supply chain using a permissioned blockchain, so every stakeholder from manufacturer to patient can verify drug authenticity and fight counterfeiting.
 date: 2021-06-11
 image: "/images/projects/medicochain_thumbnail_simple.png"

@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Playing with Eagle CAD for a Self-Balancing Robot PCB"
+title: "Eagle CAD for Self-Balancing Robot"
 description: Designing and hand-making an ATmega328 PCB for our engineering expo self-balancing robot using Eagle CAD, paper transfer, ferric chloride etching, and manual drilling.
 date: 2020-07-20
 image: "/images/projects/pcb_3d_colored.jpg"

@@ -10,9 +10,9 @@ favorite: true
 published: true
 ---
 
-# From a Scrappy Side Project to a Real Product: The Story of CogniResume
+# The Story of CogniResume
 
-> **Previously on this blog:** I built a Chrome extension that tailored CVs and cover letters to job descriptions using an LLM. No auth, no database, no users. Just me, my JSON file, and a lot of optimism.
+> <span style="font-weight: normal; font-size: 18px"> Previously: I built a Chrome extension that tailored CVs and cover letters to job descriptions using an LLM. No auth, no database, no users. Just me, my JSON file, and a lot of optimism. </span>
 
 ---
 

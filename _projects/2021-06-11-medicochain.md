@@ -10,7 +10,7 @@ favorite: false
 published: true
 ---
 
-Someone's grandmother in Kathmandu buys a blood pressure medication. She takes it every day for two weeks. Her blood pressure doesn't improve. She goes back to the clinic. The doctor is puzzled — the dosage should be working. But the pills she bought contained almost no active ingredient. They were fake. The WHO estimates that **10% of medicines in low- and middle-income countries are substandard or falsified**. Every year, counterfeit drugs kill hundreds of thousands of people, not dramatically but quietly, invisibly, in clinics and homes where nobody connects the bad outcome back to the bad pill.
+Someone's grandmother in Kathmandu buys a blood pressure medication. She takes it every day for two weeks. Her blood pressure doesn't improve. She goes back to the clinic. The doctor is puzzled, the dosage should be working. But the pills she bought contained almost no active ingredient. They were fake. The WHO estimates that **10% of medicines in low- and middle-income countries are substandard or falsified**. Every year, counterfeit drugs kill hundreds of thousands of people, not dramatically but quietly, invisibly, in clinics and homes where nobody connects the bad outcome back to the bad pill.
 
 I built Medicochain because I wanted to understand whether blockchain could actually solve this in working code, not just in a whitepaper.
 

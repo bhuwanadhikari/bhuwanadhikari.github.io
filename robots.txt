@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://bhuwanadhikari.com.np/sitemap.xml
+Sitemap: https://bhuwanadhikari.com.np/mirror-my-iphone/sitemap.xml

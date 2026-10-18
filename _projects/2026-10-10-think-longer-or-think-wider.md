@@ -3,7 +3,7 @@ layout: project
 title: "Think Longer or Think Wider? Spending 8,000 Tokens in a Small Language Model"
 description: Give a small reasoning model 8,000 tokens per math problem. Should it think once, for a long time, or think sixteen times, briefly, and vote? We bet on the vote, ran 13,760 reasoning traces on free Kaggle GPUs with Qwen3-1.7B and 4B, and lost the bet.
 date: 2026-10-10
-image: "/images/projects/think_longer_wider_thumbnail.jpg"
+image: "/images/projects/think_longer_wider_all_levels.webp"
 tags: [python, NLP, LLM, reasoning, test-time-compute, qwen3, vllm, kaggle, evaluation]
 github: https://github.com/bhuwanadhikari/sequence-vs-parallel-cot-in-slm
 favorite: true
@@ -13,14 +13,6 @@ published: true
 # The Story of Think Longer or Think Wider
 
 > <span style="font-weight: normal; font-size: 18px"> A small model on a phone gets a fixed amount of thinking. We were sure it should spend it on many quick guesses and a vote. The data said otherwise. </span>
-
----
-
-<img src="/images/projects/think_longer_wider_poster.webp" alt="Research poster titled Think Longer or Think Wider? Allocating a Fixed Test-Time Compute Budget in Small Language Models" width="100%" style="border-radius: 8px;">
-
-<center>
-<i>The poster we presented at Universität Trier (MSc NLP), with Vishesh Chandrakar.</i>
-</center>
 
 ---
 
